@@ -1,0 +1,23 @@
+h1 {
+text-align: center;
+}
+    button {
+    width: 25%;
+    padding: 10px;
+    background-color: #00509e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #17304b;
+}
+
+#Deconnexion {
+    width: 10%;
+}

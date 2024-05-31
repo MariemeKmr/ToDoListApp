@@ -1,0 +1,223 @@
+
+body {
+    margin: 0;
+}
+
+h1 {
+    color: #003f7d;
+    text-align: center;
+    padding: 0.5%;
+}
+
+.form-logout {
+    color: white;
+    text-align: center;
+    padding: 9px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    background: none;
+    text-decoration: none;
+}
+
+.form-logout:hover {
+    background-color: #00509e;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+
+.delete-button {
+    /* background-color: #003f7d; */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 auto 10px;
+}
+/* .delete-button:hover {
+    background-color: #00509e;
+} */
+.add-task {
+    font-weight: bolder;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+.task-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #6daff1b3;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(18, 60, 165, 0.59);
+}
+
+.task-actions a,
+.task-actions button {
+    margin-right: 10px;
+}
+
+.Content {
+    text-align: center;
+
+}
+
+.add-task {
+    /* text-align:center display: inline-block; */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    /* width: 20%; */
+    padding: 9px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-task:hover {
+    background-color: #00509e;
+}
+#No-Task {
+    text-align: center;
+    color: royalblue;
+}
+.acceuil {
+    padding: 16px 20px;
+    font-size: 30px;
+    color: white;
+    font-weight: bolder;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #003f7d;
+    width: 100%;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px 20px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #00509e;
+}
+
+/* Style pour les informations de l'utilisateur */
+.user-info {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.user-info li {
+    margin-left: 20px;
+}
+
+.user-info li:first-child {
+    font-weight: bold;
+}
+
+.user-info form {
+    margin: 0;
+}
+
+.icons {
+    width: 18px;
+    height: 18px;
+    display: flexbox;
+
+}
+
+.form-edit-task {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn-submit {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #003f7d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #00509e;
+}
+
+
+.status-indicator {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.status-indicator.a-faire {
+    background-color: #007bff; /* Bleu */
+}
+
+.status-indicator.en-cours {
+    background-color: #ffc107; /* Jaune */
+}
+
+.status-indicator.terminer {
+    background-color: #28a745; /* Vert */
+}
