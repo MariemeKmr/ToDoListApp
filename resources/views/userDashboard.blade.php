@@ -55,7 +55,7 @@
                                 <form action="{{ route('tasks.destroy', $task->id) }}" method="POST" class="delete-button">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit"><img src="{{ asset('icones/bin.png') }}" alt="trash icon" class="icons"></button>
+                                    <button type="submit" onclick="return confirm('etes vous sur de vouloir supprimer cette tache ?')"><img src="{{ asset('icones/bin.png') }}" alt="trash icon" class="icons"></button>
                                 </form>
                             </div>
                         </div>

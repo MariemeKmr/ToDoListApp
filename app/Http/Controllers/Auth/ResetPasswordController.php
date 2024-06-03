@@ -1,72 +1,40 @@
 <?php
+
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class ResetPasswordController extends Controller
 {
-    public function showForgotPasswordForm()
+    public function showResetForm($token)
     {
-        return view('forgot-password');
+        return view('reset-password', ['token' => $token]);
     }
 
-    public function sendResetLink(Request $request)
+    public function reset(Request $request)
     {
         $request->validate([
-            // 'phone' => 'required|numeric',
-            // 'first_name' => 'required',
-            // 'last_name' => 'required',
-            'email' => 'required',
+            'token' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|string|min:8|confirmed',
         ]);
 
-        // Logic to send reset link (could be via SMS or email)
+        $status = Password::reset(
+            $request->only('email', 'password', 'password_confirmation', 'token'),
+            function ($user, $password) {
+                $user->forceFill([
+                    'password' => Hash::make($password),
+                    'remember_token' => Str::random(60),
+                ])->save();
+            }
+        );
 
-        // For now, just redirect to reset form with the provided details
-        return redirect()->route('reset-password-form', [
-            // 'phone' => $request->phone,
-            // 'first_name' => $request->first_name,
-            // 'last_name' => $request->last_name,
-            'email' => $request->email,
-        ]);
-    }
-
-    public function showResetForm(Request $request)
-    {
-        // $phone = $request->phone;
-        // $first_name = $request->first_name;
-        // $last_name = $request->last_name;
-        $email = $request->email;
-        return view('reset-password', compact('email'));
-
-        // return view('reset-password', compact('phone', 'first_name', 'last_name'));
-    }
-
-    public function resetPassword(Request $request)
-    {
-        $request->validate([
-            // 'phone' => 'required|numeric',
-            // 'first_name' => 'required',
-            // 'last_name' => 'required',
-            'email' => 'required',
-            'password' => 'required|confirmed|min:8',
-        ]);
-
-        $user = User::where('email', $request->email)
-                    // ->where('phone', $request->phone)
-                    // ->where('first_name', $request->first_name)
-                    // ->where('last_name', $request->last_name)
-                    ->first();
-
-        if ($user) {
-            $user->password = Hash::make($request->password);
-            $user->save();
-            return redirect()->route('login')->with('success', 'Votre mot de passe a été réinitialisé avec succès.');
-        } else {
-            return back()->withErrors(['message' => 'Les informations fournies ne correspondent à aucun utilisateur. Veuillez réessayer.']);
-        }
+        return $status === Password::PASSWORD_RESET
+            ? redirect()->route('login')->with('status', __($status))
+            : back()->withErrors(['email' => [__($status)]]);
     }
 }
-

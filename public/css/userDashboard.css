@@ -12,16 +12,15 @@ h1 {
 .form-logout {
     color: white;
     text-align: center;
-    padding: 9px 16px;
+    /* padding: 9px 16px; */
     text-decoration: none;
     cursor: pointer;
     border: none;
-    background: none;
     text-decoration: none;
 }
 
 .form-logout:hover {
-    background-color: #00509e;
+    background-color: #003f7d;
 }
 
 button {

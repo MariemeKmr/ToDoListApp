@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+}
+
+h1 {
+    color: white;
+    text-align: left;
+    margin: 10px;
+    margin-top: 20px;
+}
+
+h2 {
+    color: #003f7d;
+    text-align: center;
+}
+
+.contenus {
+    margin: 60px;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background-color: aliceblue;
+    border-radius: 9px;
+    margin-top: 10px;
+
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    margin-top: 20px;
+    display: block;
+}
+
+.form-group input,
+.form-group select {
+    width: 90%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 92%;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #003f7d;
+    width: 100%;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px 20px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #00509e;
+}
+
+
+.tableau-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+
+}
+
+.tableau-list thead tr {
+    background-color: #00509e;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+.tableau-list th, .tableau-list td {
+    padding: 12px 15px;
+}
+
+.tableau-list tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+
+.tableau-list tbody tr:hover {
+    background-color: #ccddfb;
+}
+.modifier{
+    padding: 16px 2px;
+    background-color: #003f7d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 8px auto 10px;
+    margin-top: 2px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 15px;
+    text-align: center;
+
+}
+
+.modifier:hover{
+    background-color: #00509e;
+}
+
+
